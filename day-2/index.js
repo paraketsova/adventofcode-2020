@@ -8,26 +8,24 @@ function checking(text) {
   let first;
   let second;
   let letter;
-  let password;
+  let password; 
 
   let findFirstHyfen = text.indexOf('-');
   
   first = text.substring(0, findFirstHyfen);
-  console.log(first);
 
   let findFirstSpace = text.indexOf(' ');
   second = text.substring((findFirstHyfen + 1), findFirstSpace);
-  console.log(second);
  
   let findColon = text.indexOf(':');
   letter = text.substring((findFirstSpace + 1), findColon);
-  console.log(letter);
   
   password = text.substring(findColon + 2);
-  console.log(password);
   
-  /* TODO */
-  return true
+  let sameLetter = password.split(letter).length-1;
+  if (first <= sameLetter && sameLetter <= second) {
+    return true
+  }
 }
 
 let sum = 0;
