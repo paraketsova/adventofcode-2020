@@ -21,9 +21,15 @@ function checking(text) {
   letter = text.substring((findFirstSpace + 1), findColon);
   
   password = text.substring(findColon + 2);
-  
-  let sameLetter = password.split(letter).length-1;
-  if (first <= sameLetter && sameLetter <= second) {
+
+  console.log (password.charAt(first - 1));
+  console.log (password.charAt(second - 1));
+
+  if ((password.charAt(first - 1) == letter) && (password.charAt(second - 1) != letter)) {
+    console.log('HURRA')
+    return true
+  } else if ((password.charAt(first - 1) != letter) && (password.charAt(second - 1) == letter)) {
+    console.log('HURRA')
     return true
   }
 }
